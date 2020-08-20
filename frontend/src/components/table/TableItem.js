@@ -459,11 +459,6 @@ class TableItem extends PureComponent {
             const isEditable = isCellEditable(item, cells);
             const isEdited = edited === property;
             const extendLongText = multilineText ? multilineTextLines : 0;
-            const widgetData = this.getWidgetData(
-              item,
-              isEditable,
-              supportFieldEdit
-            );
 
             return (
               <TableCell
@@ -501,11 +496,6 @@ class TableItem extends PureComponent {
                   }
                 }}
                 hasComments={!!(hasComments && idx === 0)}
-                tdValue={
-                  widgetData[0].value
-                    ? JSON.stringify(widgetData[0].value)
-                    : null
-                }
                 getWidgetData={this.getWidgetData}
                 cellExtended={cellsExtended}
                 key={`${rowId}-${property}`}

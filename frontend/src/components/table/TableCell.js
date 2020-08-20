@@ -241,9 +241,10 @@ class TableCell extends PureComponent {
       rowIndex,
       hasComments,
     } = this.props;
+    const { tooltipToggled } = this.state;
+
     const widgetData = getWidgetData(item, isEditable, supportFieldEdit);
     const docId = `${this.props.docId}`;
-    const { tooltipToggled } = this.state;
     const tdValue = this.getTdValue(widgetData);
     const description = this.getDescription({ widgetData, tdValue });
     let tdTitle = this.getTdTitle({ item, description });
@@ -362,7 +363,6 @@ TableCell.propTypes = {
   listenOnKeysFalse: PropTypes.func,
   listenOnKeysTrue: PropTypes.func,
   closeTableField: PropTypes.func,
-  tdValue: PropTypes.any,
   supportFieldEdit: PropTypes.bool,
   supportZoomInto: PropTypes.bool,
   updatedRow: PropTypes.any,
